@@ -52,6 +52,9 @@ public class PostController {
     service.removeById(id);
     response.getWriter().print("Post has been removed");
 
+  }
 
+  public Long parsId (String path) {
+    return Long.parseLong(path.substring(path.lastIndexOf("/") + 1));
   }
 }

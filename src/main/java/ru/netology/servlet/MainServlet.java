@@ -37,7 +37,7 @@ public class MainServlet extends HttpServlet {
       }
       if (method.equals("GET") && path.matches(PATH_WITH_ID)) {
         // easy way
-        final var id = Long.parseLong(path.substring(path.lastIndexOf("/") + 1));
+        final var id = controller.parsId(path);
         controller.getById(id, resp);
         return;
       }
@@ -47,7 +47,7 @@ public class MainServlet extends HttpServlet {
       }
       if (method.equals("DELETE") && path.matches(PATH_WITH_ID)) {
         // easy way
-        final var id = Long.parseLong(path.substring(path.lastIndexOf("/") + 1));
+        final var id = controller.parsId(path);
         controller.removeById(id, resp);
         return;
       }
@@ -57,5 +57,6 @@ public class MainServlet extends HttpServlet {
       resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
     }
   }
+
 }
 
