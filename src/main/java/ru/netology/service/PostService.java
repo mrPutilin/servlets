@@ -1,11 +1,13 @@
 package ru.netology.service;
 
+import org.springframework.stereotype.Service;
 import ru.netology.model.Post;
 import ru.netology.repository.PostRepository;
 
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
+@Service
 public class PostService {
   private final PostRepository repository;
 
