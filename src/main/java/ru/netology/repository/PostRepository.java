@@ -6,13 +6,11 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
 // Stub
-@Repository
 public class PostRepository {
   protected ConcurrentHashMap<Long, Post> postStorage = new ConcurrentHashMap<>();
   private final AtomicLong count = new AtomicLong(0);
 
   public ConcurrentHashMap<Long, Post> all() {
-    System.out.println(postStorage);
     return postStorage;
   }
 
